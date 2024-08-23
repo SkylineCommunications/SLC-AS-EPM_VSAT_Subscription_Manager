@@ -1,1 +1,1 @@
-# SLC-AS-EPM_VSAT_Subscription_Manager
+# EPM VSAT Subscription Manager
