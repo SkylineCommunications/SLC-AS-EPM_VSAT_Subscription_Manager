@@ -5,36 +5,36 @@
 *.user
 *.suo
 
-# Ignore all files in the .vs folder (Visual Studio folder)
-.vs/
-**/.vs/
+# Ignore all files in the bin and obj folders across all projects
+**/bin/*
+**/obj/*
 
-# Auto-generated files and build results
-**/bin/
-**/obj/
-**/Debug/
-**/Release/
-**/*.vs/
-**/*.sln.docstates
-**/TestResults/
+# Ignore Debug and Release build configurations across all projects
+**/Debug/*
+**/Release/*
 
-# NuGet packages
-packages/
-**/MigrationBackup/
+# Ignore Visual Studio-specific folders and files
+.vs/*
+**/.vs/*
 
-# StyleCop and other analyzer-related files
-**/StyleCop.Cache
-# Ignore AssemblyInfo and other auto-generated files
+# Ignore auto-generated AssemblyInfo and cache files
 **/AssemblyInfo.cs
-**/AssemblyReference.cache
+**/AssemblyInfoInputs.cache
 
-# Ignore other project-related files
+# Ignore MSBuild project-specific caches
 *.csproj.user
 *.csproj.vspscc
 *.csproj.vssscc
 *.userprefs
 
-# Protocol checklist template
+# Ignore NuGet packages and migration backups
+packages/
+**/MigrationBackup/
+
+# StyleCop and other analyzer-related files
+**/StyleCop.Cache
+
+# Ignore protocol checklist template files
 **/*.dotx
 
 # Temporary MS Office files (opened document)
@@ -44,9 +44,7 @@ packages/
 **/.svn
 _git2_*
 
-# Additional Visual Studio-related cache files
-.vs/
-**/.vs/
+# Additional Visual Studio caches
 **/.futdcache.v2
 **/.dtbcache.v2
 **/DocumentLayout.json
