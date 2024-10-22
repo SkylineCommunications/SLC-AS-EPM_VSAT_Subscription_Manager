@@ -1,18 +1,52 @@
-**/bin/*
-**/obj/*
-.vs/*
-*/.vs/*
-packages/*
+# Ignore Visual Studio temporary files, build results, and user-specific files
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+
+# Ignore all files in the .vs folder (Visual Studio folder)
+.vs/
+**/.vs/
+
+# Auto-generated files and build results
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+**/*.vs/
+**/*.sln.docstates
+**/TestResults/
+
+# NuGet packages
+packages/
+**/MigrationBackup/
+
+# StyleCop and other analyzer-related files
+**/StyleCop.Cache
+# Ignore AssemblyInfo and other auto-generated files
+**/AssemblyInfo.cs
+**/AssemblyReference.cache
+
+# Ignore other project-related files
+*.csproj.user
+*.csproj.vspscc
+*.csproj.vssscc
+*.userprefs
+
+# Protocol checklist template
+**/*.dotx
+
+# Temporary MS Office files (opened document)
+~$*
+
+# SVN directories
 **/.svn
 _git2_*
-**/StyleCop.Cache
-# solution user option files
-*.suo
-# protocol checklist template
-**/*.dotx
-# Temporary MS Office file (opened document)
-~$*
-# user settings
-**.user
-# NuGet migration
-MigrationBackup/*
+
+# Additional Visual Studio-related cache files
+.vs/
+**/.vs/
+**/.futdcache.v2
+**/.dtbcache.v2
+**/DocumentLayout.json
