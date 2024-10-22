@@ -48,3 +48,6 @@ _git2_*
 **/.futdcache.v2
 **/.dtbcache.v2
 **/DocumentLayout.json
+/.vs
+/.vs
+/EPM VSAT Subscription Manager_1/obj/Debug
