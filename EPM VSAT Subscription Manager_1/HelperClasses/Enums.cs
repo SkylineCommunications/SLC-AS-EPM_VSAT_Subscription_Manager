@@ -29,5 +29,10 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
 		// Skyline EPM VSAT DSM SO
 		EPM_DSM_SO_SUBSCRIBERS,
 		EPM_DSM_SO_SATELLITES,
-	}
+
+        // CA Interface
+        CA_DATA_SUBSCRIPTION,
+        CA_PROCESS_PROFILE,
+        CA_SUBSCRIPTION_EXCEPTIONS,
+    }
 }
