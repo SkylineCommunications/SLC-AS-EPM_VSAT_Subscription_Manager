@@ -1,0 +1,53 @@
+# Ignore Visual Studio temporary files, build results, and user-specific files
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+
+# Ignore all files in the bin and obj folders across all projects
+**/bin/*
+**/obj/*
+
+# Ignore Debug and Release build configurations across all projects
+**/Debug/*
+**/Release/*
+
+# Ignore Visual Studio-specific folders and files
+.vs/*
+**/.vs/*
+
+# Ignore auto-generated AssemblyInfo and cache files
+**/AssemblyInfo.cs
+**/AssemblyInfoInputs.cache
+
+# Ignore MSBuild project-specific caches
+*.csproj.user
+*.csproj.vspscc
+*.csproj.vssscc
+*.userprefs
+
+# Ignore NuGet packages and migration backups
+packages/
+**/MigrationBackup/
+
+# StyleCop and other analyzer-related files
+**/StyleCop.Cache
+
+# Ignore protocol checklist template files
+**/*.dotx
+
+# Temporary MS Office files (opened document)
+~$*
+
+# SVN directories
+**/.svn
+_git2_*
+
+# Additional Visual Studio caches
+**/.futdcache.v2
+**/.dtbcache.v2
+**/DocumentLayout.json
+/.vs
+/.vs
+/EPM VSAT Subscription Manager_1/obj/Debug
