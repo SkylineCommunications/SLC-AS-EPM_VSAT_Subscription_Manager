@@ -19,6 +19,7 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
 		private static readonly List<Type> KnownTypes = new List<Type>
 		{
 			typeof(SubscriptionTable),
+			typeof(Flag),
 		};
 
 		public static void DistributeInterappMessage<T>(T message, List<IDmsElement> elements) where T : Message

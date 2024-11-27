@@ -132,8 +132,9 @@ namespace EPM_VSAT_Subscription_Manager_1
 			return true;
 		}
 
-		private static string ReadSubscriptionFile(IEngine engine, string folderPath, TableType tableTypeEnum)
+		private static string ReadSubscriptionFile(IEngine engine, string folderPath, TableType tableTypeEnum, out bool flag)
 		{
+			flag = false;
 			var tableRowsCsv = String.Empty;
 
 			if (!Constants.TableFiles.TryGetValue(tableTypeEnum, out var fileName))
@@ -147,8 +148,8 @@ namespace EPM_VSAT_Subscription_Manager_1
 			// Option 1
 			if (!File.Exists(completePath))
 			{
-				engine.ExitFail("Subscription File does not exists at the path: " + completePath);
-				return null;
+				flag = true;
+				return completePath;
 			}
 
 			// Only allow reading, to avoid conflicts if multiple petitions to update the file (multiple tables call at the same time)
@@ -179,21 +180,21 @@ namespace EPM_VSAT_Subscription_Manager_1
 			// if request != -1, means is a change to the table (add, delete, edit rows)
 			if(tableRowsCsv != "-1" && UpdateSubscriptionFile(engine, folderPath, tableRowsCsv, tableTypeEnum))
 			{
-				UpdateAllElements(engine, tableRowsCsv, tableTypeEnum);
+				UpdateAllElements(engine, tableRowsCsv, tableTypeEnum, false);
 			}
 
 			// else, means is a request to get the latest value (sync, no changed needed)
 			else
 			{
-				tableRowsCsv = ReadSubscriptionFile(engine, folderPath, tableTypeEnum);
+				tableRowsCsv = ReadSubscriptionFile(engine, folderPath, tableTypeEnum, out bool noFileFlag);
 				if(tableRowsCsv != null)
 				{
-					UpdateAllElements(engine, tableRowsCsv, tableTypeEnum);
+					UpdateAllElements(engine, tableRowsCsv, tableTypeEnum, noFileFlag);
 				}
 			}
 		}
 
-		private void UpdateAllElements(IEngine engine, string tableRowsCsv, TableType tableTypeEnum)
+		private void UpdateAllElements(IEngine engine, string tableRowsCsv, TableType tableTypeEnum, bool noFileFlag)
 		{
 			if (!Constants.TableProtocolNames.TryGetValue(tableTypeEnum, out var protocol))
 			{
@@ -204,8 +205,17 @@ namespace EPM_VSAT_Subscription_Manager_1
 			var elements = engine.GetDms().GetElements().ToList();
 			elements = elements.Where(x => x.Protocol.Name == protocol && x.State == ElementState.Active && x.Protocol.Version == "Production").ToList();
 
-			var tableRows = new SubscriptionTable { SubscriptionTableCsv = tableRowsCsv, SubscriptionTableEnum = Convert.ToString((int)tableTypeEnum) };
-			InterappHelper.DistributeInterappMessage(tableRows, elements);
+			if (noFileFlag)
+			{
+				string flagMessage = $"Subscription File does not exists at the path: {tableRowsCsv}";
+				var flag = new Flag { FlagMessage = flagMessage, TableEnum = Convert.ToString((int)tableTypeEnum) };
+				InterappHelper.DistributeInterappMessage(flag, elements);
+            }
+			else
+			{
+				var tableRows = new SubscriptionTable { SubscriptionTableCsv = tableRowsCsv, SubscriptionTableEnum = Convert.ToString((int)tableTypeEnum) };
+				InterappHelper.DistributeInterappMessage(tableRows, elements);
+			}
 		}
 	}
 }

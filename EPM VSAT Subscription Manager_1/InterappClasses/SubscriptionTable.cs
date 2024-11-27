@@ -10,4 +10,11 @@ namespace EPM_VSAT_Subscription_Manager_1.InterappClasses
 
 		public string SubscriptionTableEnum { get; set; }
 	}
+
+	public class Flag : Message
+	{
+		public string FlagMessage { get; set; }
+
+		public string TableEnum { get; set; }
+	}
 }
