@@ -36,7 +36,7 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
             // CA Interface
             { TableType.CA_DATA_SUBSCRIPTION, "Verizon Computer Associates Interface" },
             { TableType.CA_PROCESS_PROFILE, "Verizon Computer Associates Interface" },
-            { TableType.CA_SUBSCRIPTION_EXCEPTIONS,"Verizon Computer Associates Interface" },
+            { TableType.CA_SUBSCRIPTION_EXCEPTIONS, "Verizon Computer Associates Interface" },
         };
 
         public static readonly Dictionary<TableType, string> TableFiles = new Dictionary<TableType, string>
