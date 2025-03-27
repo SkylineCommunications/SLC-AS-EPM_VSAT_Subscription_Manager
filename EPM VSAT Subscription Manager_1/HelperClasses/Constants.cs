@@ -37,6 +37,9 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
             { TableType.CA_DATA_SUBSCRIPTION, "Verizon Computer Associates Interface" },
             { TableType.CA_PROCESS_PROFILE, "Verizon Computer Associates Interface" },
             { TableType.CA_SUBSCRIPTION_EXCEPTIONS, "Verizon Computer Associates Interface" },
+
+            // VSAT DB
+            { TableType.VSATDB_STARLINKLOOKUP, "Verizon VSat Database Platform" },
         };
 
         public static readonly Dictionary<TableType, string> TableFiles = new Dictionary<TableType, string>
@@ -71,6 +74,9 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
             { TableType.CA_DATA_SUBSCRIPTION, "CA_DATA_SUBSCRIPTION.csv" },
             { TableType.CA_PROCESS_PROFILE, "CA_PROCESS_PROFILE.csv" },
             { TableType.CA_SUBSCRIPTION_EXCEPTIONS,"CA_SUBSCRIPTION_EXCEPTIONS.csv" },
+
+            // VSAT DB
+            { TableType.VSATDB_STARLINKLOOKUP, "VSATDB_STARLINKLOOKUP.csv" },
         };
     }
 }

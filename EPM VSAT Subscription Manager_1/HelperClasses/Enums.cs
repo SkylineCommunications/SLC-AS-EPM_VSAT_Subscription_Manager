@@ -34,5 +34,8 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
         CA_DATA_SUBSCRIPTION,
         CA_PROCESS_PROFILE,
         CA_SUBSCRIPTION_EXCEPTIONS,
+
+        // VSAT DB
+        VSATDB_STARLINKLOOKUP,
     }
 }
