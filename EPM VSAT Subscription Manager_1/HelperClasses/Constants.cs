@@ -39,7 +39,7 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
             { TableType.CA_SUBSCRIPTION_EXCEPTIONS, "Verizon Computer Associates Interface" },
 
             // VSAT DB
-            { TableType.VSATDB_STARLINKLOOKUP, "Verizon VSat Database Platform" },
+            { TableType.VSATDB_CUSTOMLOOKUP, "Verizon VSat Database Platform" },
         };
 
         public static readonly Dictionary<TableType, string> TableFiles = new Dictionary<TableType, string>
@@ -76,7 +76,7 @@ namespace EPM_VSAT_Subscription_Manager_1.HelperClasses
             { TableType.CA_SUBSCRIPTION_EXCEPTIONS,"CA_SUBSCRIPTION_EXCEPTIONS.csv" },
 
             // VSAT DB
-            { TableType.VSATDB_STARLINKLOOKUP, "VSATDB_STARLINKLOOKUP.csv" },
+            { TableType.VSATDB_CUSTOMLOOKUP, "VSATDB_CUSTOMLOOKUP.csv" },
         };
     }
 }
